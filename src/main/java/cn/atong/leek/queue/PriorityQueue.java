@@ -69,6 +69,7 @@ public class PriorityQueue<E> implements Queue<E>{
     private void siftUpComparable(int k, E x) {
         Comparable<? super E> key = (Comparable<? super E>) x;
         logger.info("【入队】元素：{} 当前队列：{}", JSON.toJSONString(key), JSON.toJSONString(queue));
+        // 一直往前移 一直移到 该元素大于其父节点元素
         while (k > 0) {
             // 获取父节点Idx，相当于除以2
             int parent = (k - 1) >>> 1;
